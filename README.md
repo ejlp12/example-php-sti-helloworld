@@ -33,20 +33,26 @@ Take the Webhook GitHub URL from
 ```
 $ oc describe bc indo-php-sti-example
 
-oc describe bc indo-php-sti-example
-Name:			indo-php-sti-example
-Created:		20 seconds ago
-Labels:			app=indo-php-sti-example
-Annotations:		openshift.io/generated-by=OpenShiftNewApp
-Latest Version:		1
-Strategy:		Source
-Source Type:		Git
-URL:			https://github.com/ejlp12/example-php-sti-helloworld.git
-From Image:		ImageStreamTag openshift/php:latest
-Output to:		ImageStreamTag indo-php-sti-example:latest
+Name:		indo-php-sti-example
+Namespace:	example-php-sti-helloworld
+Created:	6 hours ago
+Labels:		app=indo-php-sti-example
+Annotations:	openshift.io/generated-by=OpenShiftNewApp
+Latest Version:	4
+
+Strategy:	Source
+URL:		https://github.com/ejlp12/example-php-sti-helloworld.git
+From Image:	ImageStreamTag openshift/php:7.0
+Output to:	ImageStreamTag indo-php-sti-example:latest
+
+Build Run Policy:	Serial
 Triggered by:		Config, ImageChange
-Webhook GitHub:		https://[Server]/oapi/v1/namespaces/example-php-sti-helloworld/buildconfigs/indo-php-sti-example/webhooks/[GitHubsecret]/github
-Webhook Generic:	https://[Server]/oapi/v1/namespaces/example-php-sti-helloworld/buildconfigs/indo-php-sti-example/webhooks/[genericsecret]/generic
+Webhook Generic:
+	URL:		https://<HOSTNAME>:8443/oapi/v1/namespaces/example-php-sti-helloworld/buildconfigs/indo-php-sti-example/webhooks/9-kMuphDdqtNM7RSwUig/generic
+	AllowEnv:	false
+Webhook GitHub:
+	URL:	https://<HOSTNAME>:8443/oapi/v1/namespaces/example-php-sti-helloworld/buildconfigs/indo-php-sti-example/webhooks/AAdE3mv-EzVLg9ajJAGd/github
+
 ```
 
 and add the URL as a Webhook in your github Repository, read https://developer.github.com/webhooks/ for more details about github Webhooks
