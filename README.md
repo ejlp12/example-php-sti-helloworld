@@ -21,9 +21,9 @@ $ oc new-project example-php-sti-helloworld
 
 #### Create Application and expose Service
 ```
-$ oc new-app https://github.com/ejlp12/example-php-sti-helloworld.git --name=appuio-php-sti-example
+$ oc new-app https://github.com/ejlp12/example-php-sti-helloworld.git --name=indo-php-sti-example
 
-$ oc expose service appuio-php-sti-example
+$ oc expose service indo-php-sti-example
 ```
 
 ## Add Webhook to trigger rebuilds
@@ -31,22 +31,22 @@ $ oc expose service appuio-php-sti-example
 Take the Webhook GitHub URL from
 
 ```
-$ oc describe bc appuio-php-sti-example
+$ oc describe bc indo-php-sti-example
 
-oc describe bc appuio-php-sti-example
-Name:			appuio-php-sti-example
+oc describe bc indo-php-sti-example
+Name:			indo-php-sti-example
 Created:		20 seconds ago
-Labels:			app=appuio-php-sti-example
+Labels:			app=indo-php-sti-example
 Annotations:		openshift.io/generated-by=OpenShiftNewApp
 Latest Version:		1
 Strategy:		Source
 Source Type:		Git
-URL:			https://github.com/appuio/example-php-sti-helloworld.git
+URL:			https://github.com/ejlp12/example-php-sti-helloworld.git
 From Image:		ImageStreamTag openshift/php:latest
-Output to:		ImageStreamTag appuio-php-sti-example:latest
+Output to:		ImageStreamTag indo-php-sti-example:latest
 Triggered by:		Config, ImageChange
-Webhook GitHub:		https://[Server]/oapi/v1/namespaces/example-php-sti-helloworld/buildconfigs/appuio-php-sti-example/webhooks/[GitHubsecret]/github
-Webhook Generic:	https://[Server]/oapi/v1/namespaces/example-php-sti-helloworld/buildconfigs/appuio-php-sti-example/webhooks/[genericsecret]/generic
+Webhook GitHub:		https://[Server]/oapi/v1/namespaces/example-php-sti-helloworld/buildconfigs/indo-php-sti-example/webhooks/[GitHubsecret]/github
+Webhook Generic:	https://[Server]/oapi/v1/namespaces/example-php-sti-helloworld/buildconfigs/indo-php-sti-example/webhooks/[genericsecret]/generic
 ```
 
 and add the URL as a Webhook in your github Repository, read https://developer.github.com/webhooks/ for more details about github Webhooks
